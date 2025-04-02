@@ -1,0 +1,49 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+* {
+    box-sizing: inherit;
+
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto Condensed", sans-serif;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 1400px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bold {
+    font-weight: 450 !important;
+}
+
+/* Dấu gạch */
+.separate::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1.4rem;
+    background-color: #FB9086;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="./asset/fonts/fontawesome-free-6.7.2/css/all.min.css">
     <link rel="stylesheet" href="./asset/css/base.css">
     <link rel="stylesheet" href="./asset/css/main.css">
-    <link rel="icon" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_32.[contenthash:base64:6].png">
+    <link rel="icon"
+        href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/icon_favicon_1_32.[contenthash:base64:6].png">
 
 </head>
 
@@ -27,7 +28,7 @@
             <div class="grid">
                 <nav class="navbar">
                     <ul class="navbar__list">
-                        <li class="navbar__item separate navbar__show-qr">
+                        <li class="navbar__item separate navbar__qr-show">
                             Vào cửa hàng trên ứng dụng F8 Shop
                             <div class="navbar__qr">
                                 <img src="./asset/img/shoppeclone.png" alt="QR code" class="navbar__qr-img">
@@ -49,11 +50,51 @@
                     </ul>
 
                     <ul class="navbar__list">
-                        <li class="navbar__item">
+                        <li class="navbar__item navbar__notify-show">
                             <a href="" class="navbar__link">
                                 <a href="" class="navbar__icon"><i class="fa-solid fa-bell"></i></a>
                                 Thông báo
                             </a>
+                            <div class="navbar__notify">
+                                <header class="navbar__notify-header">
+                                    <h3>Thông báo mới nhận</h3>
+                                </header>
+                                <ul class="navbar__notify-list">
+                                    <li class="navbar__notify-item navbar__notify-item--viewed">
+                                        <a href="" class="navbar__notify-link">
+                                            <img src="./asset/img/shoppeclone.png" alt="" class="navbar__notify-img">
+                                            <div class="navbar__notify-info">
+                                                <p class="navbar__notify-name">Mỹ phẩm Ohui chính hãng Mỹ phẩm Ohui
+                                                    chính hãng Mỹ phẩm Ohui chính hãng</p>
+                                                <p class="navbar__notify-desc">Mỹ phẩm Ohui chính hãng OKE</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="navbar__notify-item">
+                                        <a href="" class="navbar__notify-link">
+                                            <img src="./asset/img/shoppeclone.png" alt="" class="navbar__notify-img">
+                                            <div class="navbar__notify-info">
+                                                <p class="navbar__notify-name">Mỹ phẩm Ohui chính hãng Mỹ phẩm Ohui
+                                                    chính hãng Mỹ phẩm Ohui chính hãng</p>
+                                                <p class="navbar__notify-desc">Mỹ phẩm Ohui chính hãng OKE</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="navbar__notify-item">
+                                        <a href="" class="navbar__notify-link">
+                                            <img src="./asset/img/shoppeclone.png" alt="" class="navbar__notify-img">
+                                            <div class="navbar__notify-info">
+                                                <p class="navbar__notify-name">Mỹ phẩm Ohui chính hãng Mỹ phẩm Ohui
+                                                    chính hãng Mỹ phẩm Ohui chính hãng</p>
+                                                <p class="navbar__notify-desc">Mỹ phẩm Ohui chính hãng OKE</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <footer class="navbar__notify-footer">
+                                        <button class="navbar__notify-btn">Xem tất cả</button>
+                                    </footer>
+                                </ul>
+                            </div>
                         </li>
                         <li class="navbar__item">
                             <a href="" class="navbar__icon"><i class="fa-solid fa-circle-info"></i></a>
@@ -73,6 +114,52 @@
         <footer class="footer">
 
         </footer>
+    </div>
+
+    <!-- Modal layout -->
+    <div class="modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__register">Đăng ký</h3>
+                        <span class="auth-form__login">Đăng nhập</span>
+                    </div>
+                    <div class="auth-form__info">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Nhập email/tên của bạn ...">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu của bạn ...">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu của bạn ...">
+                        </div>
+                    </div>
+                    <div class="auth-form__aside">
+                        <p class="auth-form__aside-label">Đăng ký đi fen ơi. Bạn có đồng ý đăng ký với với với với 
+                            <a href="" class="auth-form__aside-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form__aside-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+                    <div class="auth-form__btns">
+                        <button class="btn btn-hover mr-8">Trở lại</button>
+                        <button class="btn btn--primary">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials-facebook btn btn--size-s">
+                        <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
+                        Kết nối với Facebook
+                    </a>
+                    <a href="" class="auth-form__socials-google btn btn--size-s">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        Kết nối với Google
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

@@ -5,24 +5,105 @@
     background-image: linear-gradient(0, #fe6433, #f53e2d);
 }
 
-.header .navbar {
+.navbar {
     display: flex;
     justify-content: space-between;
 }
 
-.header .navbar__list {
+.navbar__list {
     list-style: none;
     padding-left: 0;
     margin: 6 0 0 0;
+    display: flex;
 }
 
-.header .navbar__item {
+.navbar__item {
     margin: 0 8px;
     position: relative;
 }
 
-.header .navbar__item, 
-.header .navbar__link {
+/* Navbar user */
+.navbar__user {
+    display: flex;
+    justify-items: center;
+    position: relative;
+}
+
+.navbar__user-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.navbar__user-name {
+    font-weight: 300;
+}
+
+.navbar__user-menu {
+    position: absolute;
+    padding: 8px 0 0 0;
+    top: 115%;
+    right: 0;
+    background-color: var(--white-color);
+    box-shadow: 0 0 5px #999;
+    border-radius: 3px;
+    width: 160px;
+    z-index: 1;
+    display: none;
+}
+
+.navbar__user-menu::before {
+    content: "";
+    border-width: 20px 30px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 15px;
+    top: -30px;
+}
+
+.navbar__user-menu::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -16px;
+    width: 80%;
+    height: 20px;
+    display: block;
+}
+
+.navbar__user-menu-show:hover .navbar__user-menu {
+    display: block;
+}
+
+.navbar__user-menu-item {
+    list-style-type: none;
+}
+
+.navbar__user-menu-item:hover {
+    background-color: rgba(238, 77, 45, 0.08);
+}
+
+.navbar__user-menu-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 8px 16px;
+    display: block;
+}
+
+.navbar__user-menu-item a:first-child {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.navbar__user-menu-item a:last-child {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.navbar__item, 
+.navbar__link {
     display: inline-block;
     font-size: 1.4rem;
     color: var(--white-color);
@@ -30,19 +111,19 @@
     font-weight: 300;
 }
 
-.header .navbar__item:hover, 
-.header .navbar__link:hover,
-.header .navbar__icon:hover {
+.navbar__item:hover, 
+.navbar__link:hover,
+.navbar__icon:hover {
     color: #ccc;
     cursor: pointer;
 }
 
-.header .navbar__no-pointer{
+.navbar__no-pointer{
     color: var(--white-color);
     cursor: text;
 }
 
-.header .navbar__icon {
+.navbar__icon {
     padding: 0 2px;
     font-size: 1.4rem;
     color: var(--white-color);
@@ -114,10 +195,10 @@
 
 .navbar__notify::before {
     content: "";
+    position: absolute;
     border-width: 20px 30px;
     border-style: solid;
     border-color: transparent transparent var(--white-color) transparent;
-    position: absolute;
     right: 5px;
     top: -28px;
 }

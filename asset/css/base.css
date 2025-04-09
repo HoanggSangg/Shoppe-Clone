@@ -42,8 +42,20 @@ html {
     margin-left: 16px;
 }
 
+.mt-48 {
+    margin-top: 48px;
+}
+
+.mb-48 {
+    margin-bottom: 48px;
+}
+
 .pt-36 {
     padding-top: 36px;
+}
+
+.pb-36 {
+    padding-bottom: 36px;
 }
 
 .primary-color {
@@ -106,6 +118,7 @@ html {
     border-radius: 3px;
     display: none;
     box-shadow: 0 0 5px #999;
+    z-index: 1;
 }
 
 .select-input__item {
@@ -154,20 +167,26 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 .grid__column-2 {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: calc((100% / 12) * 2);
 }
 
 .grid-column-10 {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
     width: calc((100% / 12) * 10);
+}
+
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: calc(100% / 5);
 }
 
 /* Modal */
@@ -240,6 +259,46 @@ html {
     cursor: default;
     background-color: #999;
 }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item__link {
+    --height: 30px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    height: var(--height);
+    min-width: 40px;
+    text-align: center;
+    line-height: var(--height);
+    display: block;
+    border-radius: 3px;
+}
+
+.pagination-item__active .pagination-item__link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination-item__active .pagination-item__link:hover {
+    background-color: #ed5c3f;
+}
+
+.pagination-item__icon {
+    font-size: 2rem;
+}
+
 
 /* keyframes */
 @keyframes fadeIn {

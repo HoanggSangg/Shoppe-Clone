@@ -43,7 +43,7 @@
 .navbar__user-menu {
     position: absolute;
     padding: 8px 0 0 0;
-    top: 115%;
+    top: 200%;
     right: 0;
     background-color: var(--white-color);
     box-shadow: 0 0 5px #999;
@@ -141,6 +141,8 @@
     border-radius: 2px;
     margin-top: 4px;
     display: none;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .navbar__qr::before {
@@ -191,7 +193,7 @@
     animation: navbarNotify ease-in 0.2s;
     will-change: opacity, transform;
     display: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar__notify::before {
@@ -460,6 +462,7 @@
     box-shadow: 0 0 5px #999;
     overflow: hidden;
     display: none;
+    z-index: 1;
 }
 
 .search__form-input:focus ~ .search__form-history {
@@ -542,6 +545,7 @@
     animation: fadeIn ease-in 0.2s;
     cursor: default;
     display: none;
+    z-index: 1;
 }
 
 .search__cart-list::before {
@@ -613,6 +617,8 @@
 .cart__list-items {
     padding-left: 0;
     list-style: none;
+    height: 30vh;
+    overflow-y: auto;
 }
 
 .cart__item {
@@ -644,9 +650,16 @@
 
 .cart__item-name {
     font-weight: 500;
+    flex: 1;
     color: var(--text-color);
     font-size: 1.4rem;
-    line-height: 0.8;
+    line-height: 1.6rem;
+    max-height: 3.2rem;
+    margin: 6px 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .cart__item-price {
@@ -711,6 +724,7 @@
     padding: 0;
     animation: fadeIn ease-in 0.2s;
     display: none;
+    z-index: 1;
 }
 
 .search__form-ontions::after {
@@ -884,5 +898,258 @@
 
 .home-filter__page-btn-disabled .page-btn--icon {
     color: #ccc;
+}
+
+/* Product item */
+.home-product-item {
+    background-color: var(--white-color);
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: transform linear 0.1s;
+    will-change: transform;
+}
+
+.home-product-item:hover {
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.home-product-item a {
+    text-decoration: none;
+}
+
+.home-product-item__img {
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.home-product-item__name {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: var(--text-color);
+    margin: 10px 10px 6px;
+    height: 3.6rem;
+    overflow: hidden;
+    /* Dấu ... ở name */
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.home-product-item__price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.home-product-item__price-old {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.home-product-item__price-curren {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.home-product-item__action {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 10px 0;
+}
+
+.home-product-item__like {
+    font-size: 1.4rem;
+}
+
+.home-product-item__liked-icon {
+    color: red;
+    display: none;
+}
+
+.home-product-item__like--liked .home-product-item__liked-icon {
+    display: inline-block;
+}
+
+.home-product-item__like--liked .home-product-item__like-icon {
+    display: none;
+}
+
+.home-product-item__rating {
+    font-size: 1rem;
+    transform: scale(0.8);
+    transform-origin: right;
+    color: #d5d5d5;
+    margin-left: auto;
+}
+
+.home-product-item__rating-icon {
+    color: yellow;
+}
+
+.home-product-item__sold {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+.home-product-item__origin {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 10px;
+    color: #595959;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.home-product-item__favourite {
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    color: var(--primary-color);
+    background-color: currentColor;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 0 6px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.home-product-item__favourite span {
+    color: var(--white-color);
+}
+
+.home-product-item__favourite-icon {
+    color: var(--white-color);
+    font-size: 1rem;
+}
+
+.home-product-item__favourite::before {
+    content: "";
+    position: absolute;
+    border-top: 4px solid currentColor;
+    filter: brightness(60%);
+    border-left: 4px solid transparent;
+    left: 0;
+    bottom: -4px;
+}
+
+.home-product-item__sale {
+    position: absolute;
+    width: 40px;
+    height: 36px;
+    background-color: rgba(255, 216, 64, 0.94);
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border-top-right-radius: 5px;
+}
+
+.home-product-item__sale::before {
+    content: "";
+    position: absolute;
+    border-width: 0 20px 6px;
+    border-style: solid;
+    color: rgba(255, 216, 64, 0.94);
+    border-color: transparent currentColor transparent currentColor;
+    bottom: -5.5px;
+    left: 0;
+}
+
+.home-product-item__sale-percent {
+    color: var(--primary-color);
+}
+
+.home-product-item__sale-label {
+    color: var(--white-color);
+}
+
+/* Footer */
+.footer {
+    border-top: 4px solid var(--primary-color);
+    padding-top: 16px;
+}
+
+.footer__heading {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.footer-list {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-list__item-link {
+    text-decoration: none;
+    color: #737373;
+    font-size: 1.2rem;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-list__item-link:hover {
+    color: var(--primary-color);
+}
+
+.footer-list__item-icon {
+    font-size: 1.6rem;
+    margin-top: -4px;
+    margin-right: 6px;
+}
+
+.footer__download {
+    display: flex;
+}
+
+.footer__download-qr {
+    width: 80px;
+    object-fit: contain;
+    border: 1px solid var(--boder-color);
+}
+
+.footer__download-apps {
+    margin-left: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer__download-apps-img {
+    height: 20px;
+}
+
+.footer__download-apps-link {
+    text-decoration: none;
+    color: transparent;
+}
+
+.footer__bottom {
+    background-color: #f5f5f5;
+    padding: 24px 0;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #737373;
 }
 
